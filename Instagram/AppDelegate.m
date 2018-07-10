@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Parse/Parse.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -20,12 +20,32 @@
     
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = @"codepathInstagram";
-        configuration.clientKey = @"codepathInstagramMaster";
-        configuration.server = @"http://codepathfbinstagram.herokuapp.com/parse";
+        configuration.applicationId = @"instagram";
+        configuration.clientKey = @"234854";
+        configuration.server = @"https://instagram-personal-app.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
+ 
+    PFUser *user = [PFUser currentUser];
+    if (user != nil) {
+        NSLog(@"Welcome back %@ 😀", user.username);
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *feedNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = feedNavigationController;
+    }
+    
+//    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+//    gameScore[@"score"] = @1337;
+//    gameScore[@"playerName"] = @"Sean DOE";
+//    gameScore[@"cheatMode"] = @NO;
+//    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            NSLog(@"Object saved!");
+//        } else {
+//            NSLog(@"Error: %@", error.description);
+//        }
+//    }];
     
     return YES;
 }

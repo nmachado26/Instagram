@@ -269,7 +269,7 @@
                         <viewLayoutGuide key="safeArea" id="gdR-Vg-udK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="EVE-AV-gZA">
-                        <barButtonItem key="leftBarButtonItem" title="logout" id="GMn-ae-fyK">
+                        <barButtonItem key="leftBarButtonItem" title="logout" image="cameraIconInsta" id="GMn-ae-fyK">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="dC2-z9-nen" id="SGx-LT-iKF"/>
                             </connections>
@@ -414,7 +414,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lzX-WH-f7W"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="7rE-Cp-rRH"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search  icon new" id="7rE-Cp-rRH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGv-BA-G8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,7 +470,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2b7-tw-H25"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Post" id="sWY-rL-oCv"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="add pic icon new" id="sWY-rL-oCv"/>
                     <connections>
                         <outlet property="captionTextField" destination="hO4-bv-3GP" id="KAx-DP-qvr"/>
                         <outlet property="locationTextField" destination="2KU-6U-PDc" id="G3y-Hv-dca"/>
@@ -492,7 +492,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sRa-lL-Cef"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Likes" id="0lw-N9-QOD"/>
+                    <tabBarItem key="tabBarItem" title="Likes" image="heart icon sma" id="0lw-N9-QOD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9c-v2-Hzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,7 +508,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hm7-qj-UMR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="BpN-sY-cUr"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon png small" id="BpN-sY-cUr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CC7-ku-evg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,7 +539,7 @@
         <scene sceneID="mft-5b-HtM">
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wMG-Dy-YzF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="kWT-GV-36p"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home icon new" id="kWT-GV-36p"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vnc-dQ-sny">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -577,10 +577,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add pic icon new" width="30" height="30"/>
         <image name="airplanePngInstagram" width="1600" height="1600"/>
+        <image name="cameraIconInsta" width="50" height="50"/>
         <image name="commentIconInsta" width="200" height="200"/>
         <image name="facebookLogoWhitePng" width="1024" height="1024"/>
+        <image name="heart icon sma" width="30" height="30"/>
         <image name="heartIconInsta" width="200" height="200"/>
+        <image name="home icon new" width="30" height="30"/>
+        <image name="icon png small" width="30" height="30"/>
+        <image name="search  icon new" width="50" height="50"/>
         <image name="stockProfilePic" width="185" height="195"/>
     </resources>
     <inferredMetricsTieBreakers>

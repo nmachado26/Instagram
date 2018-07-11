@@ -15,13 +15,14 @@
 		4D4FC04E20F42F4100A62CE2 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04D20F42F4100A62CE2 /* ComposeViewController.m */; };
 		4D5D9CF420F3CBC100A0F807 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D9CF320F3CBC100A0F807 /* AppDelegate.m */; };
 		4D5D9CFA20F3CBC100A0F807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5D9CF820F3CBC100A0F807 /* Main.storyboard */; };
-		4D5D9CFC20F3CBC300A0F807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5D9CFB20F3CBC300A0F807 /* Assets.xcassets */; };
 		4D5D9CFF20F3CBC300A0F807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5D9CFD20F3CBC300A0F807 /* LaunchScreen.storyboard */; };
 		4D5D9D0220F3CBC300A0F807 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D9D0120F3CBC300A0F807 /* main.m */; };
 		4D5D9D0C20F3CBC300A0F807 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D9D0B20F3CBC300A0F807 /* InstagramTests.m */; };
 		4D5D9D1720F3CBC300A0F807 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D9D1620F3CBC300A0F807 /* InstagramUITests.m */; };
 		4D87EA6E20F54E360072E301 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D87EA6D20F54E360072E301 /* Billabong.ttf */; };
 		4DDD522E20F3FEBC00D23413 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD522D20F3FEBC00D23413 /* LoginViewController.m */; };
+		4DF74F3520F57E0500D36BD1 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */; };
+		4DF74F3720F5884E00D36BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF74F3620F5884E00D36BD1 /* Assets.xcassets */; };
 		FE55E6647532DAF69EEDFB2D /* libPods-InstagramTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5120538D86E29426547846 /* libPods-InstagramTests.a */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +58,6 @@
 		4D5D9CF220F3CBC100A0F807 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D5D9CF320F3CBC100A0F807 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4D5D9CF920F3CBC100A0F807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4D5D9CFB20F3CBC300A0F807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D5D9CFE20F3CBC300A0F807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5D9D0020F3CBC300A0F807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5D9D0120F3CBC300A0F807 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,6 +70,9 @@
 		4D87EA6D20F54E360072E301 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		4DDD522C20F3FEBC00D23413 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4DDD522D20F3FEBC00D23413 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		4DF74F3620F5884E00D36BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766510C70C15F465572BBDE6 /* libPods-InstagramUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5120538D86E29426547846 /* libPods-InstagramTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E53F3B363292240EAAE4EB /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,8 +169,8 @@
 				4DDD522B20F3FE3C00D23413 /* ViewControllers */,
 				4D5D9CF220F3CBC100A0F807 /* AppDelegate.h */,
 				4D5D9CF320F3CBC100A0F807 /* AppDelegate.m */,
+				4DF74F3620F5884E00D36BD1 /* Assets.xcassets */,
 				4D5D9CF820F3CBC100A0F807 /* Main.storyboard */,
-				4D5D9CFB20F3CBC300A0F807 /* Assets.xcassets */,
 				4D5D9CFD20F3CBC300A0F807 /* LaunchScreen.storyboard */,
 				4D5D9D0020F3CBC300A0F807 /* Info.plist */,
 				4D5D9D0120F3CBC300A0F807 /* main.m */,
@@ -202,6 +205,8 @@
 				4D4FC04020F41D5500A62CE2 /* FeedViewController.m */,
 				4D4FC04C20F42F4100A62CE2 /* ComposeViewController.h */,
 				4D4FC04D20F42F4100A62CE2 /* ComposeViewController.m */,
+				4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */,
+				4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,8 +332,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5D9CFF20F3CBC300A0F807 /* LaunchScreen.storyboard in Resources */,
-				4D5D9CFC20F3CBC300A0F807 /* Assets.xcassets in Resources */,
 				4D5D9CFA20F3CBC100A0F807 /* Main.storyboard in Resources */,
+				4DF74F3720F5884E00D36BD1 /* Assets.xcassets in Resources */,
 				4D87EA6E20F54E360072E301 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +447,7 @@
 				4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */,
 				4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */,
 				4D4FC04E20F42F4100A62CE2 /* ComposeViewController.m in Sources */,
+				4DF74F3520F57E0500D36BD1 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

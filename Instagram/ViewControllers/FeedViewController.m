@@ -11,6 +11,7 @@
 #import "Parse.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "DetailsViewController.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -129,15 +130,26 @@
     [PFUser logOutInBackground];
 }
 
-/*
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     if([segue.identifier isEqualToString:@"detailsSegue"]){
+         UINavigationController *navigationController = [segue destinationViewController];
+         DetailsViewController *detailsViewController = (DetailsViewController*)navigationController.topViewController;
+         PostCell *cell = sender;
+         detailsViewController.cell = cell;
+         detailsViewController.post = cell.post;
+         
+     }
+//     else{ //compose
+//         UINavigationController *navigationController = [segue destinationViewController];
+//         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+//         composeController.delegate = self;
+//     }
  }
- */
+
 
 
 @end

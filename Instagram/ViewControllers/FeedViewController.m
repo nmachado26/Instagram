@@ -36,6 +36,8 @@
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{

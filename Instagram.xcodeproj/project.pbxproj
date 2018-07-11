@@ -23,6 +23,8 @@
 		4DDD522E20F3FEBC00D23413 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD522D20F3FEBC00D23413 /* LoginViewController.m */; };
 		4DF74F3520F57E0500D36BD1 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */; };
 		4DF74F3720F5884E00D36BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF74F3620F5884E00D36BD1 /* Assets.xcassets */; };
+		4DF74F3A20F5B22400D36BD1 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */; };
+		4DF74F3D20F5B3D300D36BD1 /* ProfileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF74F3C20F5B3D300D36BD1 /* ProfileCollectionCell.m */; };
 		FE55E6647532DAF69EEDFB2D /* libPods-InstagramTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5120538D86E29426547846 /* libPods-InstagramTests.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,10 @@
 		4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		4DF74F3620F5884E00D36BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DF74F3820F5B22400D36BD1 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		4DF74F3B20F5B3D300D36BD1 /* ProfileCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionCell.h; sourceTree = "<group>"; };
+		4DF74F3C20F5B3D300D36BD1 /* ProfileCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionCell.m; sourceTree = "<group>"; };
 		766510C70C15F465572BBDE6 /* libPods-InstagramUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5120538D86E29426547846 /* libPods-InstagramTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E53F3B363292240EAAE4EB /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 			children = (
 				4D4FC04220F41D9E00A62CE2 /* PostCell.h */,
 				4D4FC04320F41D9E00A62CE2 /* PostCell.m */,
+				4DF74F3B20F5B3D300D36BD1 /* ProfileCollectionCell.h */,
+				4DF74F3C20F5B3D300D36BD1 /* ProfileCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +215,8 @@
 				4D4FC04D20F42F4100A62CE2 /* ComposeViewController.m */,
 				4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */,
 				4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */,
+				4DF74F3820F5B22400D36BD1 /* ProfileViewController.h */,
+				4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -441,11 +451,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5D9D0220F3CBC300A0F807 /* main.m in Sources */,
+				4DF74F3A20F5B22400D36BD1 /* ProfileViewController.m in Sources */,
 				4D5D9CF420F3CBC100A0F807 /* AppDelegate.m in Sources */,
 				4D4FC04120F41D5500A62CE2 /* FeedViewController.m in Sources */,
 				4DDD522E20F3FEBC00D23413 /* LoginViewController.m in Sources */,
 				4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */,
 				4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */,
+				4DF74F3D20F5B3D300D36BD1 /* ProfileCollectionCell.m in Sources */,
 				4D4FC04E20F42F4100A62CE2 /* ComposeViewController.m in Sources */,
 				4DF74F3520F57E0500D36BD1 /* DetailsViewController.m in Sources */,
 			);

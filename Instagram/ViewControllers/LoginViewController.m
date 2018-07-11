@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 
 @end
 
@@ -22,6 +22,20 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)editingUsernameDidEnd:(id)sender {
+}
+
+- (IBAction)editingDidEnd:(id)sender {
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason{
+        NSLog(@"Pressed");
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"Pressed");
+    [self.view endEditing:YES];
+    return YES;
+}
 - (void)setUpUI{
     //view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     self.loginButton.layer.borderWidth = 1;

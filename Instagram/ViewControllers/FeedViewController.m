@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *postsArray;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
+
 @end
 
 @implementation FeedViewController

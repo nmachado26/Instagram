@@ -25,7 +25,9 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.profilePicture = self.cell.profilePicture;
+    self.profilePicture.image = self.cell.profilePicture.image;
+    self.profilePicture.layer.cornerRadius = 16;
+    self.profilePicture.clipsToBounds = YES;
     self.usernameTopLabel.text = self.cell.usernameTopLabel.text;
     self.usernameBottomLabel.text = self.cell.usernameBottomLabel.text;
     self.captionLabel.text = self.cell.captionLabel.text;

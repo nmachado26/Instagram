@@ -11,8 +11,8 @@
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (nonatomic, strong) NSArray *picturesArray;
+@property (nonatomic, strong) NSArray *userArray;
 
 @end
 
@@ -24,6 +24,36 @@
     self.collectionView.delegate = self;
     
     [self fetchPosts];
+    [self setUpUI];
+    [self configureObjects];
+    
+}
+
+//is this necessary?
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self fetchPosts];
+    [self setUpUI];
+    [self configureObjects];
+}
+
+- (void)configureObjects{
+//    if(self.user != NSNull){
+        self.bioLabel.text = self.user[@"biography"];
+        self.nameOfUserLabel.text = self.user[@"profile_name"];
+        self.websiteLabel.text = self.user[@"website"];
+        //if data is not null
+    if(self.user[@"profile_image"] != nil){
+    self.profileImage.file = self.user[@"profile_image"];
+    [self.profileImage loadInBackground];
+    }
+    else{
+     self.profileImage.image = [UIImage imageNamed:@"my-button"];
+    }
+    //else put stock image
+
+}
+- (void)setUpUI{
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
     layout.minimumLineSpacing = 1;
@@ -40,8 +70,6 @@
     self.settingsButtonView.layer.borderWidth = 1;
     self.settingsButtonView.layer.cornerRadius = 5;
     self.profileImage.layer.cornerRadius = 42;
-    self.profileImage.layer.borderColor = [UIColor blackColor].CGColor;
-    self.profileImage.layer.borderWidth = 5;
 }
 
 - (void)fetchPosts{
@@ -79,14 +107,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ProfileCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileCollectionCell" forIndexPath:indexPath];
@@ -104,7 +132,7 @@
 }
 
 - (IBAction)editProfileButtonPressed:(id)sender {
+    
 }
-
 
 @end

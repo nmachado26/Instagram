@@ -14,7 +14,9 @@
 
 @property (strong, nonatomic) Post *post;
 @property (strong, nonatomic) PostCell *cell;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+
+@property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
+
 @property (weak, nonatomic) IBOutlet UILabel *usernameBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameTopLabel;

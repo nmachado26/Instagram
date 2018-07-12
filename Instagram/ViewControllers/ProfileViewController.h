@@ -6,6 +6,7 @@
 //  Copyright © 2018 Nicolas Machado. All rights reserved.
 //
 
+#import <ParseUI/ParseUI.h>
 #import <UIKit/UIKit.h>
 #import "Parse.h"
 
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
 @property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (strong, nonatomic) PFUser *user;
 @end

@@ -69,7 +69,14 @@
     self.settingsButtonView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:.2f].CGColor;
     self.settingsButtonView.layer.borderWidth = 1;
     self.settingsButtonView.layer.cornerRadius = 5;
-    self.profileImage.layer.cornerRadius = 42;
+    self.profileImage.layer.cornerRadius = 39;
+    //self.usernameTextField.layer.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.1f].CGColor;
+    self.topView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.bottomView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.topView.layer.borderWidth = 1;
+    self.bottomView.layer.borderWidth = 1;
+    self.topView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:.1f].CGColor;
+        self.bottomView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:.1f].CGColor;
 }
 
 - (void)fetchPosts{

@@ -32,19 +32,17 @@
     self.website = self.websiteTextField.text;
     self.name = self.nameTextField.text;
     if(self.cameraPicture != nil){
-        /*
-         //newPost.image = [self getPFFileFromImage:image];
-         //
-         //_post = post;
-         //self.photoImageView.file = post[@"image"];
-         //[self.photoImageView loadInBackground];
-*/
         user[@"profile_image"] = [self getPFFileFromImage:self.cameraPicture];
     }
+    if(![self.biography isEqualToString:@""]){
     user[@"biography"] = self.biography;
+    }
+    if(![self.website isEqualToString:@""]){
     user[@"website"] = self.website;
+    }
+    if(![self.name isEqualToString:@""]){
     user[@"profile_name"] = self.name;
-    
+    }
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if(error){
             NSLog(@"error");

@@ -19,6 +19,8 @@
     [super viewDidLoad];
     [self setUpGradient];
     [self setUpUI];
+    self.usernameTextField.delegate = self;
+    self.passwordTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 

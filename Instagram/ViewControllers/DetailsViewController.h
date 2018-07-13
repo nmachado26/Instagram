@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
 #import "PostCell.h"
+#import "Post.h" //not necessary
+#import "CommentCell.h"
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) Post *post;
 @property (strong, nonatomic) PostCell *cell;
+@property (strong, nonatomic) CommentCell *commentCell;
 
 @property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
 

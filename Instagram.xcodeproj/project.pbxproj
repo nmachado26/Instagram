@@ -10,6 +10,7 @@
 		2000D1AE057D9A945E125533 /* libPods-Instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D02ABB366BD3C7B9EC60CEC3 /* libPods-Instagram.a */; };
 		3B3A886274E7255D92A80EEE /* libPods-InstagramUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 766510C70C15F465572BBDE6 /* libPods-InstagramUITests.a */; };
 		4D07611920F6B8FD00047566 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07611820F6B8FD00047566 /* EditProfileViewController.m */; };
+		4D07611C20F823D900047566 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07611B20F823D900047566 /* CommentCell.m */; };
 		4D4FC04120F41D5500A62CE2 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04020F41D5500A62CE2 /* FeedViewController.m */; };
 		4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04320F41D9E00A62CE2 /* PostCell.m */; };
 		4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04A20F42A3200A62CE2 /* Post.m */; };
@@ -51,6 +52,8 @@
 		3DF7AE58F096950DA810C69E /* Pods-InstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramUITests/Pods-InstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D07611720F6B8FD00047566 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		4D07611820F6B8FD00047566 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		4D07611A20F823D900047566 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		4D07611B20F823D900047566 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		4D4FC03F20F41D5500A62CE2 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		4D4FC04020F41D5500A62CE2 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		4D4FC04220F41D9E00A62CE2 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				4D4FC04320F41D9E00A62CE2 /* PostCell.m */,
 				4DF74F3B20F5B3D300D36BD1 /* ProfileCollectionCell.h */,
 				4DF74F3C20F5B3D300D36BD1 /* ProfileCollectionCell.m */,
+				4D07611A20F823D900047566 /* CommentCell.h */,
+				4D07611B20F823D900047566 /* CommentCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				4D4FC04120F41D5500A62CE2 /* FeedViewController.m in Sources */,
 				4DDD522E20F3FEBC00D23413 /* LoginViewController.m in Sources */,
 				4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */,
+				4D07611C20F823D900047566 /* CommentCell.m in Sources */,
 				4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */,
 				4DF74F3D20F5B3D300D36BD1 /* ProfileCollectionCell.m in Sources */,
 				4D4FC04E20F42F4100A62CE2 /* ComposeViewController.m in Sources */,

@@ -19,6 +19,7 @@
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
     [self.likeButton addGestureRecognizer:profileTapGestureRecognizer];
     [self.likeButton setUserInteractionEnabled:YES];
+    self.commentTextField.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,11 +27,27 @@
     [self setUpCellUI];
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"Pressed");
+    NSLog(@"%@", self.commentTextField.text);
+    [textField resignFirstResponder];
+    [self.post.commentsArray addObject:self.commentTextField.text];
+    [self.post setObject:self.post.commentsArray forKey:@"commentsArray"];
+    
+    double commentCount = [self.post.commentCount doubleValue];
+    commentCount += 1;
+    self.post.commentCount = @(commentCount);
+    [self.post saveInBackground];
+    return YES;
+}
+
 - (void)setUpCellUI{
     self.profilePicture.layer.cornerRadius = 16;
     self.bottomProfilePicture.layer.cornerRadius = 12;
     self.bottomProfilePicture.clipsToBounds = YES;
     
+    self.commentCountLabel.text = [self.post.commentCount stringValue];
     double likeCount = [self.post.likeCount doubleValue];
     double minusOneLikeCountDouble = likeCount - 1;
     NSNumber *minusOneLikeCount = @(minusOneLikeCountDouble);
@@ -43,7 +60,8 @@
   //  self.likeCountLabel.text = [self.post.likeCount stringValue];
     
     PFUser *user = [PFUser currentUser];
-    if([self.post.usersLikedArray containsObject:user.username]){        self.likeButton.image = [UIImage imageNamed:@"red_heart"];
+    if([self.post.usersLikedArray containsObject:user.username]){
+        self.likeButton.image = [UIImage imageNamed:@"red_heart"];
     }
     self.userLikedLabel.text = [self.post.usersLikedArray firstObject];
 }

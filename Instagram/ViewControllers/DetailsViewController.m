@@ -12,6 +12,10 @@
 
 @interface DetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *commentsArray;
+
+
 @end
 
 @implementation DetailsViewController
@@ -25,6 +29,10 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    self.commentsArray = self.post.commentsArray;
     self.profilePicture.image = self.cell.profilePicture.image;
     self.profilePicture.layer.cornerRadius = 16;
     self.profilePicture.clipsToBounds = YES;
@@ -53,5 +61,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    CommentCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CommentCell"];
+    cell.usernameLabel.text = self.post.author.username;
+    cell.commentLabel.text = self.post.commentsArray[indexPath.row];
+    [cell setPost:self.post];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.commentsArray.count;
+}
 
 @end

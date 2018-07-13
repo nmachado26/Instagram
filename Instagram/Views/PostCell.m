@@ -9,11 +9,13 @@
 #import "PostCell.h"
 #import "Parse.h"
 
+
 @implementation PostCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+   // self.timeLabel.text = [self.post.createdAt timeAgoSinceNow];
     self.profilePicture.layer.cornerRadius = 16;
     self.profilePicture.clipsToBounds = YES;
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
@@ -110,5 +112,6 @@
     }
     [self.post saveInBackground];
 }
+
 
 @end

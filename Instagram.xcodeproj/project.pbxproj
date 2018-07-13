@@ -141,6 +141,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D07612820F892AE00047566 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4D07611F20F88A5900047566 /* PhotoMapViewController.h */,
+				4D07612020F88A5900047566 /* PhotoMapViewController.m */,
+				4D07612220F88C3E00047566 /* LocationsViewController.h */,
+				4D07612320F88C3E00047566 /* LocationsViewController.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		4D07612920F892C200047566 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4DF74F3820F5B22400D36BD1 /* ProfileViewController.h */,
+				4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */,
+				4D07611720F6B8FD00047566 /* EditProfileViewController.h */,
+				4D07611820F6B8FD00047566 /* EditProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4D07612A20F892D200047566 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4D4FC03F20F41D5500A62CE2 /* FeedViewController.h */,
+				4D4FC04020F41D5500A62CE2 /* FeedViewController.m */,
+				4D4FC04C20F42F4100A62CE2 /* ComposeViewController.h */,
+				4D4FC04D20F42F4100A62CE2 /* ComposeViewController.m */,
+				4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */,
+				4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		4D4FC03E20F40EAF00A62CE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,22 +261,11 @@
 		4DDD522B20F3FE3C00D23413 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D07612A20F892D200047566 /* General */,
+				4D07612920F892C200047566 /* Profile */,
+				4D07612820F892AE00047566 /* Map */,
 				4DDD522C20F3FEBC00D23413 /* LoginViewController.h */,
 				4DDD522D20F3FEBC00D23413 /* LoginViewController.m */,
-				4D4FC03F20F41D5500A62CE2 /* FeedViewController.h */,
-				4D4FC04020F41D5500A62CE2 /* FeedViewController.m */,
-				4D4FC04C20F42F4100A62CE2 /* ComposeViewController.h */,
-				4D4FC04D20F42F4100A62CE2 /* ComposeViewController.m */,
-				4DF74F3320F57E0500D36BD1 /* DetailsViewController.h */,
-				4DF74F3420F57E0500D36BD1 /* DetailsViewController.m */,
-				4DF74F3820F5B22400D36BD1 /* ProfileViewController.h */,
-				4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */,
-				4D07611720F6B8FD00047566 /* EditProfileViewController.h */,
-				4D07611820F6B8FD00047566 /* EditProfileViewController.m */,
-				4D07611F20F88A5900047566 /* PhotoMapViewController.h */,
-				4D07612020F88A5900047566 /* PhotoMapViewController.m */,
-				4D07612220F88C3E00047566 /* LocationsViewController.h */,
-				4D07612320F88C3E00047566 /* LocationsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -451,6 +475,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
@@ -458,6 +483,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",

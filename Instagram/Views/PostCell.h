@@ -10,8 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "Parse.h"
 #import "Post.h"
+#import <DateTools.h>
 
 @interface PostCell : UITableViewCell <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (strong, nonatomic) IBOutlet PFImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLikedLabel;

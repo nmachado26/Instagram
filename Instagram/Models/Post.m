@@ -37,6 +37,7 @@
     newPost.usersLikedArray = [[NSMutableArray alloc] init];
     newPost.commentsArray = [[NSMutableArray alloc] init];
     
+    
     [newPost saveInBackgroundWithBlock: completion];
 }
 

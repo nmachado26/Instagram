@@ -11,6 +11,9 @@
 		3B3A886274E7255D92A80EEE /* libPods-InstagramUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 766510C70C15F465572BBDE6 /* libPods-InstagramUITests.a */; };
 		4D07611920F6B8FD00047566 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07611820F6B8FD00047566 /* EditProfileViewController.m */; };
 		4D07611C20F823D900047566 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07611B20F823D900047566 /* CommentCell.m */; };
+		4D07612120F88A5900047566 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07612020F88A5900047566 /* PhotoMapViewController.m */; };
+		4D07612420F88C3E00047566 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07612320F88C3E00047566 /* LocationsViewController.m */; };
+		4D07612720F88D9500047566 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D07612620F88D9500047566 /* LocationCell.m */; };
 		4D4FC04120F41D5500A62CE2 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04020F41D5500A62CE2 /* FeedViewController.m */; };
 		4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04320F41D9E00A62CE2 /* PostCell.m */; };
 		4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FC04A20F42A3200A62CE2 /* Post.m */; };
@@ -54,6 +57,12 @@
 		4D07611820F6B8FD00047566 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		4D07611A20F823D900047566 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		4D07611B20F823D900047566 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		4D07611F20F88A5900047566 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
+		4D07612020F88A5900047566 /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
+		4D07612220F88C3E00047566 /* LocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		4D07612320F88C3E00047566 /* LocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		4D07612520F88D9500047566 /* LocationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		4D07612620F88D9500047566 /* LocationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		4D4FC03F20F41D5500A62CE2 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		4D4FC04020F41D5500A62CE2 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		4D4FC04220F41D9E00A62CE2 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -141,6 +150,8 @@
 				4DF74F3C20F5B3D300D36BD1 /* ProfileCollectionCell.m */,
 				4D07611A20F823D900047566 /* CommentCell.h */,
 				4D07611B20F823D900047566 /* CommentCell.m */,
+				4D07612520F88D9500047566 /* LocationCell.h */,
+				4D07612620F88D9500047566 /* LocationCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +238,10 @@
 				4DF74F3920F5B22400D36BD1 /* ProfileViewController.m */,
 				4D07611720F6B8FD00047566 /* EditProfileViewController.h */,
 				4D07611820F6B8FD00047566 /* EditProfileViewController.m */,
+				4D07611F20F88A5900047566 /* PhotoMapViewController.h */,
+				4D07612020F88A5900047566 /* PhotoMapViewController.m */,
+				4D07612220F88C3E00047566 /* LocationsViewController.h */,
+				4D07612320F88C3E00047566 /* LocationsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -469,9 +484,12 @@
 				4D4FC04420F41D9E00A62CE2 /* PostCell.m in Sources */,
 				4D07611C20F823D900047566 /* CommentCell.m in Sources */,
 				4D4FC04B20F42A3200A62CE2 /* Post.m in Sources */,
+				4D07612120F88A5900047566 /* PhotoMapViewController.m in Sources */,
 				4DF74F3D20F5B3D300D36BD1 /* ProfileCollectionCell.m in Sources */,
 				4D4FC04E20F42F4100A62CE2 /* ComposeViewController.m in Sources */,
+				4D07612720F88D9500047566 /* LocationCell.m in Sources */,
 				4DF74F3520F57E0500D36BD1 /* DetailsViewController.m in Sources */,
+				4D07612420F88C3E00047566 /* LocationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

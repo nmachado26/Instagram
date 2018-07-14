@@ -75,4 +75,8 @@
     return self.commentsArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 65;
+}
+
 @end

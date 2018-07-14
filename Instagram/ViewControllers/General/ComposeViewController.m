@@ -13,7 +13,7 @@
 #import <MapKit/MapKit.h>
 
 
-@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 @property (strong,nonatomic) UIImage *cameraPicture;
 
 //@property (strong, nonatomic) CLLocationCoordinate2D *location;
@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.captionTextView.delegate = self;
 //    self.captionTextView.layer.borderWidth = 1;
 //    self.captionTextView.layer.borderColor = [UIColor blackColor].CGColor;
     self.locationButton.layer.cornerRadius = 15;

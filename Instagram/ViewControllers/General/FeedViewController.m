@@ -45,19 +45,19 @@
     
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if(!self.isMoreDataLoading){
-//        // Calculate the position of one screen length before the bottom of the results
-//        int scrollViewContentHeight = self.tableView.contentSize.height;
-//        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
-//
-//        // When the user has scrolled past the threshold, start requesting
-//        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
-//            self.isMoreDataLoading = true;
-//            [self fetchPostsNext];
-//        }
-//    }
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            [self fetchPostsNext];
+        }
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -118,7 +118,7 @@
     [query includeKey:@"image"];
     query.skip = self.postsArray.count;
     //query.limit = self.postsArray.count;
-    query.limit = 1;
+    query.limit = 20;
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) { //why not NSArray *posts, like ParseChat?
         if(objects != nil){

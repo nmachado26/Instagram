@@ -26,18 +26,10 @@ static NSString * const clientSecret = @"KYCXK12AGVWYVSH5QVEEI2CTCX1PSGRUMBZBLZ4
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.results.count;
@@ -46,15 +38,6 @@ static NSString * const clientSecret = @"KYCXK12AGVWYVSH5QVEEI2CTCX1PSGRUMBZBLZ4
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocationCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
     [cell updateWithLocation:self.results[indexPath.row]];
-    //dictionary is each index
-   // self.address = [self.results[indexPath.row] valueForKeyPath:@"location.address"];
-    /*
-     - (void)updateWithLocation:(NSDictionary *)location {
-     self.nameLabel.text = location[@"name"];
-     self.addressLabel.text = [location valueForKeyPath:@"location.address"];
-     
-     NSArray *cate
-     */
     return cell;
 }
 
@@ -66,8 +49,9 @@ static NSString * const clientSecret = @"KYCXK12AGVWYVSH5QVEEI2CTCX1PSGRUMBZBLZ4
     self.address = [venue valueForKeyPath:@"location.address"];
     NSLog(@"%@, %@", lat, lng);
     [self.locationsViewControllerdelegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng address:self.address];
-    
 }
+
+//next two methods are the search bar implementation
 
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSString *newText = [searchBar.text stringByReplacingCharactersInRange:range withString:text];
@@ -99,23 +83,8 @@ static NSString * const clientSecret = @"KYCXK12AGVWYVSH5QVEEI2CTCX1PSGRUMBZBLZ4
     [task resume];
 }
 
-
-/*
- - (void)updateWithLocation:(NSDictionary *)location {
- self.nameLabel.text = location[@"name"];
- self.addressLabel.text = [location valueForKeyPath:@"location.address"];
- 
- NSArray *cate
- */
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
-*/
 
 @end

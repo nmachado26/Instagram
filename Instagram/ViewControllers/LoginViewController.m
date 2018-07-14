@@ -21,7 +21,6 @@
     [self setUpUI];
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)editingUsernameDidEnd:(id)sender {
@@ -38,8 +37,8 @@
     [self.view endEditing:YES];
     return YES;
 }
+
 - (void)setUpUI{
-    //view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     self.loginButton.layer.borderWidth = 1;
     self.loginButton.layer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:.1f].CGColor;
     self.usernameTextField.layer.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.1f].CGColor;
@@ -63,8 +62,7 @@
     UIColor *color2 = [UIColor colorWithRed:218.0/255.0 green:65.0/255.0 blue:71.0/255.0 alpha:1.0];
     UIColor *color3 = [UIColor colorWithRed:176.0/255.0 green:69.0/255.0 blue:103.0/255.0 alpha:1.0];
     UIColor *color4 = [UIColor colorWithRed:146.0/255.0 green:23.0/255.0 blue:178.0/255.0 alpha:1.0];
-//    UIColor *bottomColor = [UIColor colorWithRed:150.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
-    
+
     // Create the gradient
     CAGradientLayer *theViewGradient = [CAGradientLayer layer];
     theViewGradient.colors = [NSArray arrayWithObjects: (id)color1.CGColor, (id)color2.CGColor, (id)color3.CGColor, (id)color4.CGColor, nil];
@@ -74,18 +72,12 @@
     [self.view.layer insertSublayer:theViewGradient atIndex:0];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)loginButtonPressed:(id)sender {
     [self loginUser];
 }
+
 - (IBAction)signupButtonPressed:(id)sender {
-    if([self.usernameTextField.text isEqual:@""]){
-        [self presentAlert:@"sign up"];
-    }
-    else if([self.passwordTextField.text isEqual:@""]){
+    if([self.usernameTextField.text isEqual:@""] || [self.passwordTextField.text isEqual:@""]){
         [self presentAlert:@"sign up"];
     }
     else{
@@ -96,7 +88,6 @@
 - (void)loginUser{
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             [self presentAlert:@"login"];
@@ -112,7 +103,6 @@
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameTextField.text;
     newUser.password = self.passwordTextField.text;
-    
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if(error != nil){
             NSLog(@"Error: %@", error.localizedDescription);
@@ -139,17 +129,7 @@
     // add the OK action to the alert controller
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:^{
-        // optional code for what happens after the alert controller has finished presenting
     }];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

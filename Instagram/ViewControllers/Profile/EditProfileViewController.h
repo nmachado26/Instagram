@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface EditProfileViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *websiteTextField;
 @property (weak, nonatomic) IBOutlet UITextView *biographyTextView;
+
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *website;
 @property (strong, nonatomic) NSString *biography;

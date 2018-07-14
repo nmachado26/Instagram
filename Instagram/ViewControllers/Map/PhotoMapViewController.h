@@ -12,5 +12,5 @@
 @interface PhotoMapViewController : UIViewController
 
 @property (strong, nonatomic) NSString *address;
-//@property (strong, nonatomic) CLLocationCoordinate2D location;
+
 @end

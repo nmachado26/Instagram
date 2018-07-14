@@ -10,6 +10,7 @@
 
 
 @interface LoginViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -23,6 +24,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *dontHaveAnAccountLabel;
 @property (weak, nonatomic) IBOutlet UIView *lineView1;
 @property (weak, nonatomic) IBOutlet UIView *lineView2;
-
 
 @end

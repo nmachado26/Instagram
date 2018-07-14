@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
 #import "PostCell.h"
-#import "Post.h" //not necessary
+#import "Post.h" 
 #import "CommentCell.h"
 
 @interface DetailsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -17,10 +17,9 @@
 @property (strong, nonatomic) Post *post;
 @property (strong, nonatomic) PostCell *cell;
 @property (strong, nonatomic) CommentCell *commentCell;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
 @property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
-
 @property (weak, nonatomic) IBOutlet UILabel *usernameBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameTopLabel;

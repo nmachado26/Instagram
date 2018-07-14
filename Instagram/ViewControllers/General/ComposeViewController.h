@@ -12,15 +12,11 @@
 @interface ComposeViewController : UIViewController
 
 @property (strong, nonatomic) NSString *address;
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *image;
-
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
-
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *openCameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;

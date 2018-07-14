@@ -19,9 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *postsArray;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
 @property (assign, nonatomic) BOOL isMoreDataLoading;
-
 
 @end
 
@@ -31,18 +29,22 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self tableViewSetUp];
+    [self fetchPosts];
+    [self refreshSetUp];
+}
+
+- (void)tableViewSetUp {
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 272;
-    
-    [self fetchPosts];
-    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+}
+
+- (void)refreshSetUp {
     // Initialize a UIRefreshControl
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -54,23 +56,18 @@
         // When the user has scrolled past the threshold, start requesting
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
             self.isMoreDataLoading = true;
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [self fetchPostsNext];
         }
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self fetchPosts];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)fetchPosts{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+- (void)fetchPosts {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
@@ -83,18 +80,13 @@
     [query includeKey:@"image"];
     query.limit = 20;
     // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) { //why not NSArray *posts, like ParseChat?
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) { //why nullable?
         if(objects != nil){
             self.postsArray = [objects mutableCopy];
-//            for(Post *post in objects){
-//                [self.postsArray addObject:post];
-//                //[self.postsArray addObjectsFromArray:objects];
-//            }
-         //   [self.postsArray addObjectsFromArray:objects];
             [self.tableView reloadData];
             
+            //stop refresh control
             self.isMoreDataLoading = false;
-            // Tell the refreshControl to stop spinning
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.refreshControl endRefreshing];
         }
@@ -104,7 +96,7 @@
     }];
 }
 
-- (void)fetchPostsNext{
+- (void)fetchPostsNext {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -117,7 +109,6 @@
     [query includeKey:@"commentCount"];
     [query includeKey:@"image"];
     query.skip = self.postsArray.count;
-    //query.limit = self.postsArray.count;
     query.limit = 20;
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) { //why not NSArray *posts, like ParseChat?
@@ -125,37 +116,12 @@
             for(Post *post in objects){
                 [self.postsArray addObject:post];
             }
-            //self.postsArray = objects;
             [self.tableView reloadData];
             
+            //end refresh
             self.isMoreDataLoading = false;
-            // Tell the refreshControl to stop spinning
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.refreshControl endRefreshing];
-        }
-        else{
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-}
-
-- (void)onTimer {
-    // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-   //[query includeKey:@"author"];
-    [query includeKey:@"user"];
-    [query includeKey:@"caption"];
-    [query includeKey:@"likeCount"];
-    [query includeKey:@"commentCount"];
-    [query includeKey:@"image"];
-    [query includeKey:@"location"];
-    query.limit = 20;
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) { //why not NSArray *posts, like ParseChat?
-        if(objects != nil){
-            self.postsArray = objects;
-            [self.tableView reloadData];
         }
         else{
             NSLog(@"%@", error.localizedDescription);
@@ -172,15 +138,13 @@
         cell.usernameBottomLabel.text = user.username;
     } else {
         // No user found, set default username
-        cell.usernameTopLabel.text = @"🌮";
-        cell.usernameBottomLabel.text = @"🌮";
+        cell.usernameTopLabel.text = @"user";
+        cell.usernameBottomLabel.text = @"user";
     }
     cell.captionLabel.text = postObject[@"caption"];
     cell.locationLabel.text = postObject[@"location"];
     cell.timeLabel.text = [postObject.createdAt timeAgoSinceNow];
-  //  cell.timeLabel.text = [self.post.createdAt timeAgoSinceNow];
     [cell setPost:postObject];
-    
     return cell;
 }
 
@@ -190,7 +154,6 @@
 
 - (IBAction)logoutButtonPressed:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
@@ -202,20 +165,14 @@
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if([segue.identifier isEqualToString:@"detailsSegue"]){
-        //UINavigationController *navigationController = [segue destinationViewController];
-         DetailsViewController *detailsViewController = [segue destinationViewController];//(DetailsViewController*)navigationController.topViewController;
+         DetailsViewController *detailsViewController = [segue destinationViewController];
          PostCell *cell = sender;
          detailsViewController.cell = cell;
          detailsViewController.post = cell.post;
-         
      }
-//     else{ //compose
-//         UINavigationController *navigationController = [segue destinationViewController];
-//         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-//         composeController.delegate = self;
-//     }
  }
 
-
-
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
 @end

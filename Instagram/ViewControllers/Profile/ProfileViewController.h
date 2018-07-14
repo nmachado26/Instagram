@@ -11,6 +11,9 @@
 #import "Parse.h"
 
 @interface ProfileViewController : UIViewController
+
+@property (strong, nonatomic) PFUser *user;
+
 @property (weak, nonatomic) IBOutlet UIView *settingsButtonView;
 @property (weak, nonatomic) IBOutlet UILabel *postsCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameOfUserLabel;
@@ -20,5 +23,5 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (strong, nonatomic) PFUser *user;
+
 @end

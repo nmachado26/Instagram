@@ -992,7 +992,6 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="editProfileButtonPressed:" destination="KFW-Fd-PcH" eventType="touchUpInside" id="pJ4-ox-S7w"/>
                                             <segue destination="ysI-UB-ySR" kind="presentation" id="nli-BR-qsK"/>
                                         </connections>
                                     </button>

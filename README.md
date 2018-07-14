@@ -53,7 +53,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 IMPORTANT: ADDED THE GIF TO THE REPO! nmachado26/Instagram/instagramGif1.gif
-Go to git repo to watch gif. The file was too large to convert to URL in imgur
+The gif ends with the infinite scroll feature after logging in to the second user. Might be cut off in README due to size.
 
 <img src='/instagramGif1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 

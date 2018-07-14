@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.captionTextView.layer.borderWidth = 1;
-    self.captionTextView.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.captionTextView.layer.borderWidth = 1;
+//    self.captionTextView.layer.borderColor = [UIColor blackColor].CGColor;
     self.locationButton.layer.cornerRadius = 15;
     self.locationButton.clipsToBounds = YES;
     self.openCameraButton.layer.cornerRadius = 15;

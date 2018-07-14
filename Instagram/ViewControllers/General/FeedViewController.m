@@ -81,6 +81,7 @@
         }
     }];
 }
+
 - (void)onTimer {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
